@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Profile</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script>
+        function mouseontab(obj) {
+            obj.style.backgroundColor = "rgb(39, 69, 132)";
+        }
+
+        function mouseouttab(obj) {
+            obj.style.backgroundColor = "rgb(59, 89, 152)";
+        }
+    </script>
+    <style>
+        header {
+            background-color: rgb(59, 89, 152);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 10%;
+        }
+        
+        .errorLabel {
+            display: block;
+            text-align: center;
+        }
+        
+        .fb-min-logo {
+            color: white;
+            font-weight: bold;
+            font-size: 100pt;
+            margin: 30%;
+        }
+        
+        .header-heading {
+            color: white;
+            font-size: 18pt;
+        }
+        
+        .division-lines {
+            color: gray;
+            margin: 0 8% 0 8%;
+        }
+        
+        #current-tab {
+            background-color: rgb(19, 49, 112);
+            padding: 10% 0 10% 10%;
+        }
+        
+        .other-tab {
+            padding: 10% 0 10% 10%;
+        }
+        
+        .label {
+            color: rgb(59, 89, 152);
+            font-weight: bold;
+            font-size: 16pt;
+        }
+        
+        .container {
+            margin-top: 100px;
+        }
+        
+        .row {
+            padding: 20px 0 20px 0;
+        }
+        
+        .text-input {
+            border: 3px solid rgb(59, 89, 152);
+            height: 40px;
+            width: 300px;
+        }
+        
+        #confirm-password-text-input {
+            margin-top: 15px;
+        }
+        
+        #change-button {
+            background: linear-gradient(rgb(59, 89, 152), rgb(119, 149, 212));
+            color: white;
+            height: 60px;
+            width: 110px;
+            border: 3px solid rgb(59, 89, 152);
+            border-radius: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo" onmouseover="mouseontab(this)" onmouseout="mouseouttab(this)"> <a style="text-decoration:none" href="http://localhost:8080/profile"><span class="fb-min-logo">f</span></a> </div>
+        <div class="other-tab" onmouseover="mouseontab(this)" onmouseout="mouseouttab(this)"> <a style="text-decoration:none" href="http://localhost:8080/editprofile"><span class="header-heading">Edit Profile</span></a> </div>
+        <div class="division-lines"> ___________ </div>
+        <div id="current-tab"> <a style="text-decoration:none" href="http://localhost:8080/changepass"><span class="header-heading">Change Password</span></a> </div>
+        <div class="division-lines"> ___________ </div>
+        <div class="other-tab" onmouseover="mouseontab(this)" onmouseout="mouseouttab(this)"> <a style="text-decoration:none" href="http://localhost:8080/logout"><span class="header-heading">Logout</span></a> </div>
+    </header>
+    <div class="container">
+        <form action="/api/changepassword" method="post">
+            <div class="row">
+                <div class="col-lg-9"></div>
+                <div class="col-lg-3"> <input type="submit" value="UPDATE" id="change-button"> </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2 label">Old Password</div>
+                <div class="col-lg-5"><input type="password" name="old_password" class="text-input"></div>
+                <div class="col-lg-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2 label">New Password</div>
+                <div class="col-lg-5"><input type="password" name="new_password" class="text-input"></div>
+                <div class="col-lg-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2 label">Confirm Password</div>
+                <div class="col-lg-5"><input type="password" name="confirm_password" class="text-input" id="confirm-password-text-input"></div>
+                <div class="col-lg-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-2">
+                    <p class="errorLabel">
+                        <font color="red">Cannot update password !!!</font>
+                    </p>
+                </div>
+                <div class="col-lg-5"></div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

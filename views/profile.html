@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Profile</title>
+    <link rel="stylesheet" type="text/css" href="css/style1.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="scripts/script1.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="http://localhost:8080/logout"><span class="logout-button" onmouseover="buttonmouseover(this)" onmouseout="buttonmouseout(this)">Logout</span></a>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5"></div>
+            <div class="col-lg-2" id="user-profile-heading">USER PROFILE</div>
+            <div class="col-lg-5"></div>
+        </div>
+        <form action="/api/update" method="post">
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-2 label">First Name</div>
+                <div class="col-lg-2 text-input"><input type="text" name="first_name" value=""></div>
+                <div class="col-lg-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-2 label">Surname</div>
+                <div class="col-lg-2 text-input"><input type="text" name="surname"></div>
+                <div class="col-lg-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-2 label">Email</div>
+                <div class="col-lg-2 text-input"><input type="email" name="email"></div>
+                <div class="col-lg-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-2 label">Password</div>
+                <div class="col-lg-2 text-input"><input type="text" name="password"></div>
+                <div class="col-lg-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-2 label">Birthday</div>
+                <div class="col-lg-2"><input type="date" name="birthday"></div>
+                <div class="col-lg-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-2 label">Gender</div>
+                <div class="col-lg-2">
+                    <input type="radio" name="gender" value="male" checked> Male &nbsp;
+                    <input type="radio" name="gender" value="female"> Female &nbsp;
+                    <input type="radio" name="gender" value="other"> Other
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-2"><input type="submit" value="Update Info" id="update-profile-button" onmouseover="buttonmouseover(this)" onmouseout="buttonmouseout(this)"></div>
+                <div class="col-lg-5"></div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
